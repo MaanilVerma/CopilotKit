@@ -44,7 +44,7 @@ const REQUEST_TIMEOUT_MS = 15_000;
 
 interface ThreadRecord {
   id: string;
-  tenantId: string;
+  organizationId: string;
   agentId: string;
   createdById: string;
   name: string | null;
@@ -66,7 +66,7 @@ type ThreadMetadataEvent =
       operation: "created" | "renamed" | "archived" | "unarchived" | "updated";
       threadId: string;
       userId: string;
-      tenantId: string;
+      organizationId: string;
       occurredAt: string;
       thread: ThreadRecord;
     }
@@ -74,7 +74,7 @@ type ThreadMetadataEvent =
       operation: "deleted";
       threadId: string;
       userId: string;
-      tenantId: string;
+      organizationId: string;
       occurredAt: string;
       deleted: {
         id: string;
